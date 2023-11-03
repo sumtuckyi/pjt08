@@ -6,9 +6,10 @@ class SampleUser(HttpUser):
     def on_start(self):
         print('test start')
 
-    # @task
-    # def normal_sort(self):
-    #     self.client.get("test/normal_sort/")
+    @task
+    def normal_sort(self):
+        # http://localhost:8000/ 가 앞에 붙는다.
+        self.client.get("test/normal_sort/")
 
     # @task
     # def priority_queue(self):
@@ -18,7 +19,4 @@ class SampleUser(HttpUser):
     # def bubble_sort(self):
     #     self.client.get("test/bubble_sort/")
 
-    @task
-    def dataFrame(self):
-        self.client.get("test/dataFrame/")
 
